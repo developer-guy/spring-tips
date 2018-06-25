@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer View</title>
+</head>
+<body>
+
+<div th:each="c : ${customers}">
+    <h2><span th:text="${c.first}">first</span> <span th:text="${c.last}">last</span></h2>
+
+    <div style="border-top: 1px solid black;" th:each="o : ${c.orders}">
+        <span th:text="${o.id}">id</span>
+        <span th:text="${o.sku}">sku</span>
+    </div>
+
+</div>
+
+</body>
+</html>
